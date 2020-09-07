@@ -1,0 +1,31 @@
+<div class="container mt-5">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+                <h3>Log In</h3>
+            </div>
+            <div class="card-body">
+				<form >
+                    <div [formGroup]="LoginFormGroup">
+                        <div class="input-group form-group" formGroupName="Login" >
+                            <input type="text"  class="form-control" placeholder="username" formControlName="Username">
+                        </div>
+                        <div class="input-group form-group" formGroupName="Login" >
+                            <input type="password" class="form-control" placeholder="password" formControlName="Password">
+                        </div>
+                    </div>
+                    
+                    
+                </form>
+                <div class="form-group">
+                    <button class="btn float-right btn btn-primary" (click)="onLogin()">Login</button>
+                </div>
+                
+            </div>
+            
+        </div>
+        <div>
+            <a class="" (click)="goToSignUp()">Sign Up</a>
+        </div>
+    </div>
+</div> 

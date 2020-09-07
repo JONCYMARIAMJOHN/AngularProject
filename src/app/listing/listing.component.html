@@ -1,0 +1,73 @@
+<div class="card" >
+    <div class="card-body" >
+      
+      <h5 class="card-title" *ngIf="Name">{{Name}}</h5>
+      
+        <div class="card-text">
+            <button (click)="getSubjectByDept()">Get My Subjects</button>
+        </div>
+        <div class="card-text">
+            <button (click)="onEditClick()">Edit My Details</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="col-xs-12 grid-container">
+    <kendo-grid 
+      [data]="list" 
+      [height]="410"   
+      [pageable]="true"
+    >
+  
+    <kendo-grid-column field="SubjectId" title="SubjectCode" width="100">
+      <ng-template kendoGridHeaderTemplate let-column>
+        <b>{{column.title}}</b>
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="SubjectName" title="SubjectName" width="250">
+      <ng-template kendoGridHeaderTemplate let-column>
+        <b>{{column.title}}</b>
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="Dept" title="Department" width="250">
+        <ng-template kendoGridHeaderTemplate let-column>
+          <b>{{column.title}}</b>
+        </ng-template>
+      </kendo-grid-column>
+    
+    <kendo-grid-command-column title="Action" width="220">
+      <ng-template kendoGridCellTemplate let-row>
+        <button class="btn btn-danger" (click)="onDelete(row)">
+          <span class="fa fa-trash"></span>
+        </button>
+      </ng-template>
+    </kendo-grid-command-column>
+    </kendo-grid>
+  </div>
+
+
+
+
+
+
+<!-- <table class="table">
+    <thead>
+        <tr>
+            <th>SubjectCode</th>
+            <th>SubjectName</th>
+            <th>Department</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of list">
+            <td>{{data.SubjectId}}</td>
+            <td>{{data.SubjectName}}</td>
+            <td>{{data.Dept}}</td>
+            <td><button><span class="fa fa-trash"></span></button></td>
+        </tr>
+    </tbody>
+</table> -->
